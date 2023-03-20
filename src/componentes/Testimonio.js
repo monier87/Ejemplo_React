@@ -1,16 +1,17 @@
 import React from 'react';
+import '../hojas-de-estilos/Testimonio.css'
 
-function Testimonio() {
+function Testimonio(props) {
     return (
       <div className='contenedor-testimonio'>
         <img 
           className='imagen-testimonio'
-          src={require('../imagenes/testimonio-emma.png')}
+          src={require(`../imagenes/testimonio-${props.imagen}.png`)}
           alt='Foto de Emma'/>
         <div className='contenedor-texto-testimonio'>
-          <p className='nombre-testimonio'>Emma Bostia en Suecia</p>
-          <p className='cargo-testimonio'>Ingeniera  de Software en Spotify</p>
-          <p className='Texto-testimonio'>ESto es un parrofo de Prueba.kshfkasd,kbfad,msbfmnbsdf,mb,kdasbf,mdasb,mfdsba,mbdsaf,mdsa,mbdfas,mbfd,masd,msbd,ms</p>
+          <p className='nombre-testimonio'>{props.nombre} en {props.pais}</p>
+          <p className='cargo-testimonio'>{props.cargo}en {props.empresa}</p>
+          <p className='Texto-testimonio'>"{props.testimonio}"</p>
         </div>
       </div>
 
